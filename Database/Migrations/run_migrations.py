@@ -2,6 +2,10 @@ from Database.Migrations.User_Table_Migrations import create_users_table
 from Database.Migrations.User_Table_Migrations import drop_users_table
 from Database.Migrations.Organization_Table_Migrations import create_organizations_table
 from Database.Migrations.Organization_Table_Migrations import drop_organizations_table
+from Database.Migrations.Invoice_Table_Migrations import create_invoice_table
+from Database.Migrations.Invoice_Table_Migrations import drop_invoice_table
+
+
 
 MIGRATIONS_RUN_FLAG = False
 
@@ -10,12 +14,14 @@ def run_migrations():
     if not MIGRATIONS_RUN_FLAG:
         create_users_table()
         create_organizations_table()
+        create_invoice_table()
         # call other migration functions here
         MIGRATIONS_RUN_FLAG = True
     else:
         print("Migrations have already been run.")
         drop_users_table()
         drop_organizations_table()
+        drop_invoice_table()
 
 if __name__ == "__main__":
     run_migrations()
