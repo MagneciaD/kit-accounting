@@ -1,5 +1,5 @@
-from Database.Migrations.User_Table_Migration import create_users_table
-from Database.Migrations.User_Table_Migration import drop_users_table
+from Database.Migrations.User_Table_Migrations import create_users_table
+from Database.Migrations.User_Table_Migrations import drop_users_table
 from Database.Migrations.Organizations_Table_Migration import create_organizations_table
 from Database.Migrations.Organizations_Table_Migration import drop_organizations_table
 
