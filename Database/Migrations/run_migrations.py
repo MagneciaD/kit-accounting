@@ -4,6 +4,9 @@ from Database.Migrations.Organization_Table_Migrations import create_organizatio
 from Database.Migrations.Organization_Table_Migrations import drop_organizations_table
 from Database.Migrations.Invoice_Table_Migrations import create_invoice_table
 from Database.Migrations.Invoice_Table_Migrations import drop_invoice_table
+from Database.Migrations.Client_Table_Migrations import create_client_table
+from Database.Migrations.Client_Table_Migrations import drop_client_table
+
 
 
 
@@ -15,6 +18,7 @@ def run_migrations():
         create_users_table()
         create_organizations_table()
         create_invoice_table()
+        create_client_table()
         # call other migration functions here
         MIGRATIONS_RUN_FLAG = True
     else:
@@ -22,6 +26,7 @@ def run_migrations():
         drop_users_table()
         drop_organizations_table()
         drop_invoice_table()
+        drop_client_table()
 
 if __name__ == "__main__":
     run_migrations()
