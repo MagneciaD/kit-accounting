@@ -5,7 +5,7 @@ def create_organizations_table():
     cursor = conn.cursor()
 
     query = """
-    CREATE TABLE Organization (
+    CREATE TABLE organizations (
     id INT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     org_id VARCHAR(255) NOT NULL,
     user_id INT(20) UNSIGNED NOT NULL,
@@ -16,8 +16,8 @@ def create_organizations_table():
     phone_no TEXT NOT NULL,
     website_link VARCHAR(255),
     PRIMARY KEY (id),
-    UNIQUE (org_id),
-    FOREIGN KEY (user_id) REFERENCES User(id)
+    UNIQUE (org_id)
+   
 )
 
     """
@@ -31,7 +31,7 @@ def drop_organizations_table():
     conn = create_connection()
     cursor = conn.cursor()
 
-    query = "DROP TABLE IF EXISTS users"
+    query = "DROP TABLE IF EXISTS organizations"
     cursor.execute(query)
     conn.commit()
 

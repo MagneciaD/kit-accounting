@@ -5,7 +5,7 @@ def create_invoice_table():
     cursor = conn.cursor()
 
     query = """
-    CREATE TABLE Invoice (
+    CREATE TABLE invoice (
     id INT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     invoice_id VARCHAR(255) NOT NULL,
     client_id INT(20) UNSIGNED NOT NULL,
@@ -17,10 +17,8 @@ def create_invoice_table():
     pay_status VARCHAR(255) NOT NULL,
     timestamp TIMESTAMP NOT NULL,
     PRIMARY KEY (id),
-    UNIQUE (invoice_id),
-    FOREIGN KEY (client_id) REFERENCES Client(id),
-    FOREIGN KEY (user_id) REFERENCES User(id),
-    FOREIGN KEY (org_id) REFERENCES Organization(id)
+    UNIQUE (invoice_id)
+  
 )
 
     """
@@ -34,7 +32,7 @@ def drop_invoice_table():
     conn = create_connection()
     cursor = conn.cursor()
 
-    query = "DROP TABLE IF EXISTS users"
+    query = "DROP TABLE IF EXISTS invoice"
     cursor.execute(query)
     conn.commit()
 

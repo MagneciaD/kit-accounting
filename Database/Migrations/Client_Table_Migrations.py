@@ -1,11 +1,11 @@
 from Database.Migrations.connection import create_connection
 
-def create_client_table():
+def create_clients_table():
     conn = create_connection()
     cursor = conn.cursor()
 
     query = """
-    CREATE TABLE Client (
+    CREATE TABLE clients (
     id INTEGER PRIMARY KEY,
     client_id INTEGER NOT NULL UNIQUE,
     user_id INTEGER NOT NULL,
@@ -25,11 +25,11 @@ def create_client_table():
     cursor.close()
     conn.close()
 
-def drop_client_table():
+def drop_clients_table():
     conn = create_connection()
     cursor = conn.cursor()
 
-    query = "DROP TABLE IF EXISTS client"
+    query = "DROP TABLE IF EXISTS clients"
     cursor.execute(query)
     conn.commit()
 
