@@ -6,35 +6,36 @@ def table_exists(cursor, table_name):
     cursor.execute("SHOW TABLES LIKE %s", (table_name,))
     return cursor.fetchone() is not None
 
-def create_organizations_table():
+def create_quotation_table():
     try:
         conn = create_connection()
         cursor = conn.cursor()
 
-        table_name = 'organizations'
+        table_name = 'Quotation'
 
         if not table_exists(cursor, table_name):
             query = """
-            CREATE TABLE organizations (
+            CREATE TABLE Quotation (
                 id INT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-                org_id VARCHAR(255) NOT NULL,
-                user_id INT(20) UNSIGNED NOT NULL,
-                company_name VARCHAR(30) NOT NULL,
-                company_address VARCHAR(255) NOT NULL,
-                email_address VARCHAR(20) NOT NULL,
-                company_logo VARCHAR(20) NOT NULL,
-                phone_no TEXT NOT NULL,
-                website_link VARCHAR(255),
+                quotation_id VARCHAR(255) NOT NULL,
+                user_id INT(10) UNSIGNED NOT NULL,
+                org_id INT(10) UNSIGNED NOT NULL,
+                quotation_date DATE NOT NULL,
+                validity_period DATE NOT NULL,
+                quote_status VARCHAR(255) NOT NULL,
+                vat DECIMAL(10, 2) NOT NULL,
+                total DECIMAL(10, 2) NOT NULL,
+                timestamp TIMESTAMP NOT NULL,
                 PRIMARY KEY (id),
-                UNIQUE (org_id)
-                FOREIGN KEY (user_id) REFERENCES users(id)
-            )
+                UNIQUE KEY (quotation_id)
+                
+            );
             """
             cursor.execute(query)
             conn.commit()
-            print("Table 'organizations' created successfully.")
+            print("Table 'Quotation' created successfully.")
         else:
-            print("Table 'organizations' already exists.")
+            print("Table 'Quotation' already exists.")
 
     except mysql.connector.Error as err:
         print("Error creating table: {}".format(err))
@@ -43,24 +44,23 @@ def create_organizations_table():
             cursor.close()
             conn.close()
 
-def drop_organizations_table():
+def drop_quotation_table():
     try:
         conn = create_connection()
         cursor = conn.cursor()
 
-        query = "DROP TABLE IF EXISTS organizations"
+        query = "DROP TABLE IF EXISTS Quotation"
         cursor.execute(query)
         conn.commit()
 
-        print("Table 'organizations' dropped successfully.")
+        print("Table 'Quotation' dropped successfully.")
 
     except mysql.connector.Error as err:
-        print("Error dropping table: {}".format(err))
+        print("Error dropping table:{}".format(err))
     finally:
         if conn.is_connected():
             cursor.close()
             conn.close()
-
 # Call the functions as needed
-create_organizations_table()
-# drop_organizations_table()
+create_quotation_table()
+# drop_items_table()
