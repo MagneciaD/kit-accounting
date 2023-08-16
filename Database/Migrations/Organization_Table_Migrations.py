@@ -17,8 +17,8 @@ def create_organizations_table():
             query = """
             CREATE TABLE organizations (
                 id INT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-                org_id VARCHAR(255) NOT NULL,
-                user_id INT(20) UNSIGNED NOT NULL,
+                org_id VARCHAR(20) NOT NULL,
+                user_id VARCHAR(20) NOT NULL,
                 company_name VARCHAR(30) NOT NULL,
                 company_address VARCHAR(255) NOT NULL,
                 email_address VARCHAR(20) NOT NULL,
@@ -26,8 +26,8 @@ def create_organizations_table():
                 phone_no TEXT NOT NULL,
                 website_link VARCHAR(255),
                 PRIMARY KEY (id),
-                UNIQUE (org_id)
-                FOREIGN KEY (user_id) REFERENCES users(id)
+                UNIQUE (org_id),
+                FOREIGN KEY (user_id) REFERENCES users(user_id)
             )
             """
             cursor.execute(query)

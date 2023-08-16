@@ -17,13 +17,15 @@ def create_items_table():
             query = """
             CREATE TABLE items (
                 id INT AUTO_INCREMENT PRIMARY KEY,
-                item_id INT(20) NOT NULL,
-                qi_id VARCHAR(255),
-                user_id INT(255),
-                name VARCHAR(255),
-                item_quality INT(20),
-                price VARCHAR(255),
-                sub_total DECIMAL(25)
+                qi_id VARCHAR(20) NOT NULL,
+                user_id VARCHAR(20) NOT NULL,
+                name VARCHAR(255) NOT NULL,
+                item_quality INT(20) NOT NULL,
+                price VARCHAR(255) NOT NULL,
+                sub_total DECIMAL(25) NOT NULL,
+                UNIQUE (qi_id),
+                FOREIGN KEY (user_id) REFERENCES users(user_id)
+
             );
             """
             cursor.execute(query)

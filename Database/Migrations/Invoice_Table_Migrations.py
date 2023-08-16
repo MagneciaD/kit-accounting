@@ -17,17 +17,22 @@ def create_invoice_table():
             query = """
             CREATE TABLE invoice (
                 id INT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-                invoice_id VARCHAR(255) NOT NULL,
-                client_id INT(20) UNSIGNED NOT NULL,
-                user_id INT(20) UNSIGNED NOT NULL,
+                invoice_id VARCHAR(20) NOT NULL,
+                client_id VARCHAR(20) NOT NULL,
+                user_id VARCHAR(20) NOT NULL,
                 org_id VARCHAR(20) NOT NULL,
+                qi_id VARCHAR(20) NOT NULL,
                 invoice_date DATETIME NOT NULL,
                 vat DECIMAL(10,2) NOT NULL,
                 tot_price DECIMAL(8,2) NOT NULL,
                 pay_status VARCHAR(255) NOT NULL,
                 timestamp TIMESTAMP NOT NULL,
                 PRIMARY KEY (id),
-                UNIQUE (invoice_id)
+                UNIQUE (invoice_id),
+                FOREIGN KEY (client_id) REFERENCES clients(client_id),
+                FOREIGN KEY (user_id) REFERENCES users(user_id),
+                FOREIGN KEY (org_id) REFERENCES organizations(org_id),
+                FOREIGN KEY (qi_id) REFERENCES items(qi_id)
             )
             """
             cursor.execute(query)

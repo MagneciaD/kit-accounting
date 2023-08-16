@@ -17,10 +17,11 @@ def create_users_table():
             query = """
             CREATE TABLE users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
-                user_id INT(20) NOT NULL,
+                user_id VARCHAR(20) NOT NULL,
                 name VARCHAR(255),
                 email VARCHAR(255),
-                password VARCHAR(255)
+                password VARCHAR(255),
+                UNIQUE (user_id)
             )
             """
             cursor.execute(query)

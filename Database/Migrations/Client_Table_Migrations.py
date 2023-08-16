@@ -17,16 +17,19 @@ def create_clients_table():
             query = """
             CREATE TABLE clients (
                 id INTEGER PRIMARY KEY,
-                client_id INTEGER NOT NULL UNIQUE,
-                user_id INTEGER NOT NULL,
-                org_id INT NOT NULL,
+                client_id VARCHAR(20) NOT NULL UNIQUE,
+                user_id VARCHAR(20) NOT NULL,
+                org_id VARCHAR(20) NOT NULL,
                 first_name VARCHAR(255) NOT NULL,
                 last_name VARCHAR(255) NOT NULL,
                 email VARCHAR(255) NOT NULL,
                 client_address VARCHAR(255) NOT NULL,
                 phone_no VARCHAR(255) NOT NULL,
-                timestamp TIMESTAMP NOT NULL
-                FOREIGN KEY (org_id) REFERENCES organizations(id) ON DELETE CASCADE
+                timestamp TIMESTAMP NOT NULL,
+                UNIQUE (client_id),
+                FOREIGN KEY (user_id) REFERENCES users(user_id),
+                FOREIGN KEY (org_id) REFERENCES organizations(org_id)
+                
 
             );
             """

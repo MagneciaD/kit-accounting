@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aab97ad3-59c0-4308-9c35-6c3d16a58a82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Apps/Controller/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Apps/Controller/user_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Apps/Model/User.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Apps/Model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Database/Migrations/Items_Table_Migrations.py" afterDir="false" />
+    <list default="true" id="aab97ad3-59c0-4308-9c35-6c3d16a58a82" name="Changes" comment="quotation update">
+      <change beforePath="$PROJECT_DIR$/.idea/kit-accounting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kit-accounting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database/Migrations/Client_Table_Migrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Migrations/Client_Table_Migrations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database/Migrations/Invoice_Table_Migrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Migrations/Invoice_Table_Migrations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Migrations/Items_Table_Migrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Migrations/Items_Table_Migrations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database/Migrations/Organization_Table_Migrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Migrations/Organization_Table_Migrations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/Migrations/run_migrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Migrations/run_migrations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Migrations/Quotation_Table_Migrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Migrations/Quotation_Table_Migrations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Migrations/User_Table_Migrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Migrations/User_Table_Migrations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +29,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="0efa6363-6688-4ef8-a701-9114db180a5b" />
+        <option name="url" value="https://github.com/MagneciaD/kit-accounting.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,17 +66,18 @@
       <option name="presentableId" value="Default" />
       <updated>1691670292335</updated>
     </task>
+    <task id="LOCAL-00001" summary="quotation update">
+      <created>1692094209480</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692094209480</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Database/Migrations/run_migrations.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="quotation update" />
+    <option name="LAST_COMMIT_MESSAGE" value="quotation update" />
   </component>
 </project>
