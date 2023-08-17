@@ -1,5 +1,4 @@
 from Database.Migrations.connection import create_connection
-import uuid
 
 class User:
     def __init__(self, user_id, name, email, password):
@@ -7,8 +6,6 @@ class User:
         self.name = name
         self.email = email
         self.password = password
-        self.user_id = str(uuid.uuid4())  # Generate a unique user_id
-
 
     def save(self):
         conn = create_connection()
