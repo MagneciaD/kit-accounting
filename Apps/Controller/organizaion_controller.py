@@ -1,13 +1,32 @@
 from Apps.Model.Organization import Organization
+import random
+import string
+
+def generate_org_id():
+    numbers = ''.join(random.choices(string.digits, k=5))
+    letters = ''.join(random.choices(string.ascii_letters, k=2))
+    org_id = 'ORG' + numbers
+    return org_id
 
 def create_organization_from_input():
-    company_name = input("Enter company name: ")
-    company_address = input("Enter company address: ")
-    email_address = input("Enter email address: ")
-    phone_no = input("Enter phone number: ")
-    website_link = input("Enter website link: ")
+    try:
+        company_name = input("Enter company name: ")
+        company_address = input("Enter company address: ")
+        email_address = input("Enter email address: ")
+        company_logo = input("Enter company logo URL: ")
+        phone_no = input("Enter phone number: ")
+        website_link = input("Enter website link (optional): ")
+        org_id = generate_org_id()
 
-    organization = Organization(company_name, company_address, email_address, phone_no, website_link)
-    organization.save()
+        organization = Organization(org_id, company_name, company_address, email_address, company_logo, phone_no, website_link)
 
+        # Assuming the Organization class has a save() method
+        organization.save()
+
+        print("Organization created and saved successfully!")
+
+    except Exception as e:
+        print("An error occurred:", e)
+
+# Call the function to create and save an organization
 create_organization_from_input()

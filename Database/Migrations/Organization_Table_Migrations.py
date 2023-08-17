@@ -23,7 +23,7 @@ def create_organizations_table():
                 company_address VARCHAR(255) NOT NULL,
                 email_address VARCHAR(20) NOT NULL,
                 company_logo VARCHAR(20) NOT NULL,
-                phone_no TEXT NOT NULL,
+                phone_no INT(20) NOT NULL,
                 website_link VARCHAR(255),
                 PRIMARY KEY (id),
                 UNIQUE (org_id),

@@ -53,6 +53,7 @@ class User:
             user_data_list = cursor.fetchall()
             users = []
             for user_data in user_data_list:
+
                 user = User(user_data[1], user_data[2], '')  # Pass an empty string for password for security reasons
                 user.id = user_data[0]
                 users.append(user)

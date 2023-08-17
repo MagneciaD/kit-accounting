@@ -33,7 +33,7 @@ def create_invoice_table():
                 FOREIGN KEY (user_id) REFERENCES users(user_id),
                 FOREIGN KEY (org_id) REFERENCES organizations(org_id),
                 FOREIGN KEY (qi_id) REFERENCES items(qi_id)
-            )
+            );
             """
             cursor.execute(query)
             conn.commit()
