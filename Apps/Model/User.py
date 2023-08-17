@@ -1,7 +1,8 @@
 from Database.Migrations.connection import create_connection
 
 class User:
-    def __init__(self, name, email, password):
+    def __init__(self, user_id, name, email, password):
+        self.user_id = user_id
         self.name = name
         self.email = email
         self.password = password
@@ -10,8 +11,8 @@ class User:
         conn = create_connection()
         cursor = conn.cursor()
 
-        query = "INSERT INTO users (name, email, password) VALUES (%s, %s, %s)"
-        values = (self.name, self.email, self.password)
+        query = "INSERT INTO users (user_id, name, email, password) VALUES (%s, %s, %s, %s)"
+        values = (self.user_id, self.name, self.email, self.password)
 
         try:
             cursor.execute(query, values)
