@@ -29,7 +29,7 @@ class User:
         cursor = conn.cursor()
 
         query = "UPDATE users SET name = %s, email = %s, password = %s WHERE id = %s"
-        values = (self.name, self.email, self.password, self.id)  # Assuming you have an 'id' attribute for each user
+        values = (self.name, self.email, self.password, self.user_id)  # Use self.user_id instead of self.id
 
         try:
             cursor.execute(query, values)
@@ -37,9 +37,9 @@ class User:
             print("User updated successfully!")
         except Exception as e:
             print(f"Error updating user: {e}")
-
-        cursor.close()
-        conn.close()
+        finally:
+            cursor.close()
+            conn.close()
 
     @staticmethod
     def read_all():

@@ -58,9 +58,6 @@ def create_user_from_input():
     except Exception as e:
         print("An error occurred:", e)
 
-# Call the function to create and save a user
-create_user_from_input()
-
 # Read User
 def read_all_users():
     users = User.read_all()
@@ -87,14 +84,12 @@ def read_user_by_id():
     else:
         print("User not found.")
 
-def update_user_from_input():
-    user_id = int(input("Enter the user ID you want to update: "))
+def update_user_from_input(user_id):
     name = input("Enter the new name: ")
     email = input("Enter the new email: ")
     password = input("Enter the new password: ")
 
-    user = User(name, email, password)
-    user.id = user_id
+    user = User(user_id, name, email, password)  # Pass all required arguments
     user.update()
 
 def delete_user_by_id(user_id):
@@ -111,11 +106,14 @@ def delete_user_by_id(user_id):
 read_all_users()
 
 # Call the read_user_by_id() function to read a user by their ID
-read_user_by_id()
+# read_user_by_id()
 
 # Call the update_user_from_input() function to update a user
-#update_user_from_input()
+user_id_to_update = int(input("Enter the user ID you want to update: "))
+update_user_from_input(user_id_to_update)
 
+
+read_user_by_id()
 # Prompt the user to enter the ID of the user they want to delete
 user_id_to_delete = int(input("Enter the ID of the user you want to delete: "))
 delete_user_by_id(user_id_to_delete)

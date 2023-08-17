@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aab97ad3-59c0-4308-9c35-6c3d16a58a82" name="Changes" comment="Foreign key update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Controller/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Controller/user_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/Model/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Model/User.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
