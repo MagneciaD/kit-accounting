@@ -1,4 +1,5 @@
 from Database.Migrations.connection import create_connection
+import uuid
 
 class User:
     def __init__(self, user_id, name, email, password):
@@ -6,6 +7,8 @@ class User:
         self.name = name
         self.email = email
         self.password = password
+        self.user_id = str(uuid.uuid4())  # Generate a unique user_id
+
 
     def save(self):
         conn = create_connection()
@@ -40,6 +43,30 @@ class User:
 
         cursor.close()
         conn.close()
+
+    @staticmethod
+    def read_all():
+        conn = create_connection()
+        cursor = conn.cursor()
+
+        query = "SELECT id, name, email FROM users"
+
+        try:
+            cursor.execute(query)
+            user_data_list = cursor.fetchall()
+            users = []
+            for user_data in user_data_list:
+                user = User(user_data[1], user_data[2], '')  # Pass an empty string for password for security reasons
+                user.id = user_data[0]
+                users.append(user)
+            return users
+        except Exception as e:
+            print(f"Error reading users: {e}")
+            return []
+
+        finally:
+            cursor.close()
+            conn.close()
 
     @staticmethod
     def read(user_id):
