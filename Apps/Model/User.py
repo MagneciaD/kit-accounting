@@ -54,7 +54,7 @@ class User:
             users = []
             for user_data in user_data_list:
 
-                user = User(user_data[1], user_data[2], '')  # Pass an empty string for password for security reasons
+                user = User(user_data[0], user_data[1], user_data[2], '')  # Pass an empty string for password for security reasons
                 user.id = user_data[0]
                 users.append(user)
             return users
@@ -78,7 +78,7 @@ class User:
             cursor.execute(query, values)
             user_data = cursor.fetchone()
             if user_data:
-                user = User(user_data[1], user_data[2], '')  # Pass an empty string for password for security reasons
+                user = User(user_data[0], user_data[1], user_data[2], '')  # Pass an empty string for password for security reasons
                 user.id = user_data[0]
                 return user
             else:
