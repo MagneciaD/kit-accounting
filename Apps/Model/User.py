@@ -91,12 +91,13 @@ class User:
             cursor.close()
             conn.close()
 
-    def delete(self):
+    @staticmethod
+    def delete_by_id(user_id):
         conn = create_connection()
         cursor = conn.cursor()
 
         query = "DELETE FROM users WHERE id = %s"
-        values = (self.id,)  # Assuming you have an 'id' attribute for each user
+        values = (user_id,)
 
         try:
             cursor.execute(query, values)
