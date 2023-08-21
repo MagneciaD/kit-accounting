@@ -1,6 +1,8 @@
 # Import the User class from the correct module
 import random
 import string
+
+from Apps.Controller.organizaion_controller import create_organization_from_input
 from Apps.Model.User import User
 
 def generate_user_id():
@@ -22,6 +24,8 @@ def create_user_from_input():
 
         # Assuming the User class has a save() method
         user.save()
+        print(user_id)
+        create_organization_from_input(user_id)
 
         print("User created and saved successfully!")
 
@@ -52,6 +56,8 @@ def create_user_from_input():
 
         # Assuming the User class has a save() method
         user.save()
+
+        create_organization_from_input(user_id)
 
         print("User created and saved successfully!")
 
@@ -100,21 +106,21 @@ def delete_user_by_id(user_id):
 
 
 # Call the create_user_from_input() function to create a new user
-#create_user_from_input()
+create_user_from_input()
 
 # Call the function to read and display all users
-read_all_users()
+#read_all_users()
 
 # Call the read_user_by_id() function to read a user by their ID
 # read_user_by_id()
 
 # Call the update_user_from_input() function to update a user
-user_id_to_update = int(input("Enter the user ID you want to update: "))
-update_user_from_input(user_id_to_update)
+#user_id_to_update = int(input("Enter the user ID you want to update: "))
+#update_user_from_input(user_id_to_update)
 
 
-read_user_by_id()
+# read_user_by_id()
 # Prompt the user to enter the ID of the user they want to delete
-user_id_to_delete = int(input("Enter the ID of the user you want to delete: "))
-delete_user_by_id(user_id_to_delete)
+#user_id_to_delete = int(input("Enter the ID of the user you want to delete: "))
+#delete_user_by_id(user_id_to_delete)
 
