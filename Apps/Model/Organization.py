@@ -4,13 +4,14 @@ import mysql.connector
 class Organization:
     def __init__(self, org_id, user_id, company_name, company_address, email_address, company_logo, phone_no, website_link=None):
         self.org_id = org_id
-        self.user_id = user_id
+        self.user_id = user_id  # New user_id attribute
         self.company_name = company_name
         self.company_address = company_address
         self.email_address = email_address
         self.company_logo = company_logo
         self.phone_no = phone_no
         self.website_link = website_link
+
 
     def save(self):
         conn = create_connection()
@@ -87,19 +88,20 @@ class Organization:
             cursor.close()
             conn.close()
 
-    def delete(self):
+    @staticmethod
+    def delete_by_id(org_id):
         conn = create_connection()
         cursor = conn.cursor()
 
-        query = "DELETE FROM organizations WHERE org_id = %s"
-        values = (self.org_id,)
+        query = "DELETE FROM users WHERE id = %s"
+        values = (org_id,)
 
         try:
             cursor.execute(query, values)
             conn.commit()
-            print("Organization deleted successfully!")
-        except mysql.connector.Error as err:
-            print(f"Error deleting organization: {err}")
-        finally:
-            cursor.close()
-            conn.close()
+            print("organization deleted successfully!")
+        except Exception as e:
+            print(f"Error deleting user: {e}")
+
+        cursor.close()
+        conn.close()

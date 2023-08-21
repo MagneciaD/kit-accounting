@@ -13,6 +13,7 @@ from Database.Migrations.Quotation_Table_Migrations import drop_quotation_table
 
 MIGRATIONS_RUN_FLAG = False
 
+
 def run_migrations():
     global MIGRATIONS_RUN_FLAG
     if not MIGRATIONS_RUN_FLAG:
