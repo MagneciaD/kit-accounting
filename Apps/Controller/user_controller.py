@@ -3,6 +3,7 @@ import random
 import string
 
 from Apps.Controller.organizaion_controller import create_organization_from_input
+from Apps.View.dashboard_view import *
 from Apps.Model.User import User
 
 def generate_user_id():
@@ -12,25 +13,6 @@ def generate_user_id():
     return user_id
 
 # Create user
-def create_user_from_input():
-    try:
-        name = input("Enter your name: ")
-        email = input("Enter your email: ")
-        password = input("Enter your password: ")
-        user_id = generate_user_id()
-
-        # Create a User instance
-        user = User(user_id, name, email, password)
-
-        # Assuming the User class has a save() method
-        user.save()
-        print(user_id)
-        create_organization_from_input(user_id)
-
-        print("User created and saved successfully!")
-
-    except Exception as e:
-        print("An error occurred:", e)
 
 # Call the function to create and save a user
 # Import the User class from the correct module
@@ -60,6 +42,8 @@ def create_user_from_input():
         create_organization_from_input(user_id)
 
         print("User created and saved successfully!")
+
+        dash()
 
     except Exception as e:
         print("An error occurred:", e)
@@ -106,7 +90,6 @@ def delete_user_by_id(user_id):
 
 
 # Call the create_user_from_input() function to create a new user
-create_user_from_input()
 
 # Call the function to read and display all users
 #read_all_users()
