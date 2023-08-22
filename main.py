@@ -1,6 +1,6 @@
 from Apps.Controller.user_controller import *
-from Apps.View.login import *
-from Apps.View.dashboard_view import *
+from Resources.View.login import *
+from Resources.View.dashboard_view import *
 
 
 def display_menu():

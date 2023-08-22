@@ -33,8 +33,8 @@ def dash():
             manage_services()
 
         elif choice == "4":
-            print("Exiting the dashboard.")
-            break
+            print("Logging out...")
+            return
 
         else:
             print("Invalid choice. Please select a valid option.")

@@ -1,6 +1,6 @@
 import mysql.connector
 
-from Apps.View.dashboard_view import *
+from Resources.View.dashboard_view import *
 
 # Establish a connection to the MySQL database
 db = mysql.connector.connect(
@@ -28,7 +28,7 @@ def fill_in():
 
     if user:
         print("Welcome to K.I.T")
-        display_dash()  # Call the main function from the dashboard_view module
+        dash()  # Call the main function from the dashboard_view module
     else:
         print("Invalid credentials.")
 
