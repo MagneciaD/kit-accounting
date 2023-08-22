@@ -11,6 +11,7 @@ class Organization:
         self.company_logo = company_logo
         self.phone_no = phone_no
         self.website_link = website_link
+        self.user_id = user_id
 
 
     def save(self):

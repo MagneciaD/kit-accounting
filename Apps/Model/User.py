@@ -108,3 +108,23 @@ class User:
 
         cursor.close()
         conn.close()
+<<<<<<< HEAD
+=======
+
+        @staticmethod
+        def get_valid_user_id(user_id):
+            conn = create_connection()
+            cursor = conn.cursor()
+
+            query = "SELECT user_id FROM users LIMIT 1"  # Fetch the first user's ID
+            cursor.execute(query)
+            user_id = cursor.fetchone()
+
+            cursor.close()
+            conn.close()
+
+            if user_id:
+                return user_id[0]  # Return the first user's ID
+            else:
+                return None
+>>>>>>> 6f1f6fb6f85fbd164632c21a83b25727c635bf21
