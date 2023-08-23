@@ -1,3 +1,8 @@
+from Apps.Model.User import User
+from Apps.Controller.user_controller import *
+from Resources.View.profile_view import *
+
+
 
 def display_dash():
     print("Dashboard Menu:")
@@ -6,9 +11,9 @@ def display_dash():
     print("3. Manage Services")
     print("4. Exit")
 
-def manage_profiles():
-    print("You selected to view profile.")
-    # Implement profile view logic here
+def manage_profiles(user, organization):
+    display_user_profile(user)
+    display_organization_profile(organization)
 
 def manage_products():
     print("You selected to manage products.")
@@ -19,12 +24,18 @@ def manage_services():
     # Implement service management logic here
 
 def dash():
+    logged_in_user_id = int(input("Enter your user ID: "))
+
+    # Retrieve user and organization information based on the user ID
+    user = User.read(logged_in_user_id)
+    organization = Organization.read_by_user_id(logged_in_user_id)
+
     while True:
         display_dash()
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            manage_profiles()
+            manage_profiles(user, organization)
 
         elif choice == "2":
             manage_products()
