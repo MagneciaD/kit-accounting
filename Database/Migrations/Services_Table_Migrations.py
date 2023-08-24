@@ -17,12 +17,12 @@ def create_services_table():
             query = """
             CREATE TABLE services (
                 id INT AUTO_INCREMENT PRIMARY KEY,
-                s_id VARCHAR(20) NOT NULL,
+                service_id VARCHAR(20) NOT NULL,
                 user_id VARCHAR(20) NOT NULL,
                 service_name VARCHAR(255) NOT NULL,
                 description VARCHAR(255) NOT NULL,
                 price FLOAT(20.1) NOT NULL,
-                UNIQUE (s_id),
+                UNIQUE (service_id),
                 FOREIGN KEY (user_id) REFERENCES users(user_id)
             );
             """

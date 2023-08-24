@@ -1,7 +1,6 @@
 from Apps.Controller.services_controller import *
 from Apps.Controller.user_controller import *
 
-
 def display_dash():
     print("Dashboard Menu:")
     print("1. View Profiles")
@@ -17,13 +16,14 @@ def manage_products():
     print("You selected to manage products.")
     # Implement product management logic here
 
-def manage_services():
+def manage_services(user_id):  # Accept user_id as a parameter
     print("You selected to manage services.")
-    create_service_from_input()
+    create_service_from_input(user_id)  # Pass user_id to the function
 
     # Implement service management logic here
 
 def dash():
+    user_id = None  # You need to get the user_id from the authentication process
     while True:
         display_dash()
         choice = input("Enter your choice: ")
@@ -35,8 +35,7 @@ def dash():
             manage_products()
 
         elif choice == "3":
-            manage_services()
-
+            manage_services(user_id)  # Pass the user_id
 
         elif choice == "4":
             print("Logging out...")
