@@ -65,8 +65,9 @@ def update_item_from_input(qi_id, user_id):
     price = float(input("Enter new item price: "))
     sub_total = float(input("Enter new sub total: "))
 
-    item = Item(qi_id, user_id, name, item_quality, price, sub_total)  # Pass all required arguments
+    item = Item(qi_id, user_id, name, item_quality, price, sub_total)
     item.update()
+
 
 def delete_item_by_qi_id(qi_id):
     Item.delete_by_qi_id(qi_id)
@@ -81,10 +82,14 @@ create_item_from_input()
 # Call the read_item_by_qi_id() function to read an item by its ID
 read_item_by_qi_id()
 
-# Call the update_item_from_input() function to update an item
+# Prompt the user to enter the ID of the item they want to update
 item_qi_id_to_update = input("Enter the item ID you want to update: ")
-update_item_from_input(item_qi_id_to_update)
+
+# Prompt the user to enter the new user ID
+new_user_id = input("Enter new user ID: ")
+update_item_from_input(item_qi_id_to_update, new_user_id)
+
 
 # Prompt the user to enter the ID of the item they want to delete
-item_qi_id_to_delete = input("Enter the ID of the item you want to delete: ")
-delete_item_by_qi_id(item_qi_id_to_delete)
+# item_qi_id_to_delete = input("Enter the ID of the item you want to delete: ")
+# delete_item_by_qi_id(item_qi_id_to_delete)

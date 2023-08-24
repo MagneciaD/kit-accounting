@@ -10,6 +10,7 @@ class Item:
         self.price = price
         self.sub_total = sub_total
 
+
     def save(self):
         conn = create_connection()
         cursor = conn.cursor()
