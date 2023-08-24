@@ -4,15 +4,14 @@ from Resources.View.dashboard_view import *
 
 def authenticate_user(conn, email, password):
     cursor = conn.cursor()
-    query = "SELECT email, password FROM users WHERE email=%s"
+    query = "SELECT user_id, email, password FROM users WHERE email=%s"
     cursor.execute(query, (email,))
     user = cursor.fetchone()
 
-    if user and user[1] == password:
-        return True
+    if user and user[2] == password:
+        return True, user[0]  # Return user_id along with the authentication result
     else:
-        return False
-
+        return False, None
 
 def fill_in():
     db_conn = mysql.connector.connect(
@@ -30,8 +29,10 @@ def fill_in():
 
         if authenticate_user(db_conn, email, password):
             print("Login successful. Welcome, {}!".format(email))
-            dash()
-            break
+            auth_result, user_id = authenticate_user(db_conn, email, password)
+            if auth_result:
+                dash(user_id)
+                break
         else:
             print("Login failed. Invalid email or password.")
 

@@ -22,8 +22,7 @@ def manage_services(user_id):  # Accept user_id as a parameter
 
     # Implement service management logic here
 
-def dash():
-    user_id = None  # You need to get the user_id from the authentication process
+def dash(user_id):
     while True:
         display_dash()
         choice = input("Enter your choice: ")
@@ -45,4 +44,5 @@ def dash():
             print("Invalid choice. Please select a valid option.")
 
 if __name__ == "__main__":
+
     dash()
