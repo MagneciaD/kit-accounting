@@ -1,131 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="aab97ad3-59c0-4308-9c35-6c3d16a58a82" name="Changes" comment="Foreign key update">
+    <list default="true" id="fe23a304-f67c-4a2c-a6a7-dd41a44b5b6b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/kit-accounting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kit-accounting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/View/dashboard_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/View/dashboard_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Controller/items_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Controller/items_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Model/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Model/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="0efa6363-6688-4ef8-a701-9114db180a5b" />
-        <option name="url" value="https://github.com/MagneciaD/kit-accounting.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2TnE9MBaX1tcZfhE7n09KX2xnXH" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2UQE6478MXv8RAMwdb6RjYSkN8K" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/User/Documents/Kayise IT/Projects/Local/Kit-Accounting-Kray-Version",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "last_opened_file_path": "C:/Users/User/Documents/Kayise IT/Projects/GitHub/Kit/kit-accounting"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Pycharm\kit-accounting\Resources" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="run_migrations" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="kit-accounting" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\User\AppData\Local\Programs\Python\Python39\python.exe" />
-      <option name="SDK_NAME" value="Python 3.9" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Database/Migrations" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Database/Migrations/run_migrations.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aab97ad3-59c0-4308-9c35-6c3d16a58a82" name="Changes" comment="" />
-      <created>1691670292335</created>
+      <changelist id="fe23a304-f67c-4a2c-a6a7-dd41a44b5b6b" name="Changes" comment="" />
+      <created>1692863225297</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1691670292335</updated>
+      <updated>1692863225297</updated>
     </task>
-    <task id="LOCAL-00001" summary="quotation update">
-      <created>1692094209480</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1692094209480</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Foreign key update">
-      <created>1692173598699</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1692173598699</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="quotation update" />
-    <MESSAGE value="Foreign key update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Foreign key update" />
   </component>
 </project>
