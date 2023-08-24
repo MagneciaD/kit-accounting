@@ -6,31 +6,31 @@ def table_exists(cursor, table_name):
     cursor.execute("SHOW TABLES LIKE %s", (table_name,))
     return cursor.fetchone() is not None
 
-def create_items_table():
+def create_services_table():
     try:
         conn = create_connection()
         cursor = conn.cursor()
 
-        table_name = 'items'
+        table_name = 'services'
 
         if not table_exists(cursor, table_name):
             query = """
-            CREATE TABLE items (
+            CREATE TABLE services (
                 id INT AUTO_INCREMENT PRIMARY KEY,
-                qi_id VARCHAR(20) NOT NULL,
+                s_id VARCHAR(20) NOT NULL,
                 user_id VARCHAR(20) NOT NULL,
-                item_quantity INT(20) NOT NULL,
-                sub_total DECIMAL(20.1) NOT NULL,
-                UNIQUE (qi_id),
+                service_name VARCHAR(255) NOT NULL,
+                description VARCHAR(255) NOT NULL,
+                price FLOAT(20.1) NOT NULL,
+                UNIQUE (s_id),
                 FOREIGN KEY (user_id) REFERENCES users(user_id)
-
             );
             """
             cursor.execute(query)
             conn.commit()
-            print("Table 'items' created successfully.")
+            print("Table 'services' created successfully.")
         else:
-            print("Table 'items' already exists.")
+            print("Table 'services' already exists.")
 
     except mysql.connector.Error as err:
         print("Error creating table: {}".format(err))
@@ -39,16 +39,16 @@ def create_items_table():
             cursor.close()
             conn.close()
 
-def drop_items_table():
+def drop_services_table():
     try:
         conn = create_connection()
         cursor = conn.cursor()
 
-        query = "DROP TABLE IF EXISTS items"
+        query = "DROP TABLE IF EXISTS services"
         cursor.execute(query)
         conn.commit()
 
-        print("Table 'items' dropped successfully.")
+        print("Table 'services' dropped successfully.")
 
     except mysql.connector.Error as err:
         print("Error dropping table: {}".format(err))
@@ -58,5 +58,5 @@ def drop_items_table():
             conn.close()
 
 # Call the functions as needed
-create_items_table()
-# drop_items_table()
+create_services_table()
+# drop_services_table()

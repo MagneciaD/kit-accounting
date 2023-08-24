@@ -3,7 +3,7 @@ import random
 import string
 
 from Apps.Controller.organizaion_controller import create_organization_from_input
-from Apps.View.dashboard_view import *
+from Resources.View.dashboard_view import *
 from Apps.Model.User import User
 
 def generate_user_id():
@@ -83,30 +83,24 @@ def delete_user_by_id(user_id):
 
 
 # Call the create_user_from_input() function to create a new user
-<<<<<<< HEAD
-create_user_from_input()
-=======
->>>>>>> 6f1f6fb6f85fbd164632c21a83b25727c635bf21
-
 # Call the function to read and display all users
 #read_all_users()
 
 # Call the read_user_by_id() function to read a user by their ID
-read_user_by_id()
+# read_user_by_id()
 
 # Call the update_user_from_input() function to update a user
 #user_id_to_update = int(input("Enter the user ID you want to update: "))
 #update_user_from_input(user_id_to_update)
 
-<<<<<<< HEAD
+
 # Prompt the user to enter the ID of the user they want to delete
-user_id_to_delete = int(input("Enter the ID of the user you want to delete: "))
-delete_user_by_id(user_id_to_delete)
-=======
+#user_id_to_delete = int(input("Enter the ID of the user you want to delete: "))
+#delete_user_by_id(user_id_to_delete)
+
 
 # read_user_by_id()
 # Prompt the user to enter the ID of the user they want to delete
 #user_id_to_delete = int(input("Enter the ID of the user you want to delete: "))
 #delete_user_by_id(user_id_to_delete)
 
->>>>>>> 6f1f6fb6f85fbd164632c21a83b25727c635bf21

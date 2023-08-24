@@ -108,8 +108,6 @@ class User:
 
         cursor.close()
         conn.close()
-<<<<<<< HEAD
-=======
 
         @staticmethod
         def get_valid_user_id(user_id):
@@ -127,4 +125,3 @@ class User:
                 return user_id[0]  # Return the first user's ID
             else:
                 return None
->>>>>>> 6f1f6fb6f85fbd164632c21a83b25727c635bf21

@@ -1,3 +1,6 @@
+from Apps.Controller.services_controller import *
+from Apps.Controller.user_controller import *
+
 
 def display_dash():
     print("Dashboard Menu:")
@@ -16,6 +19,8 @@ def manage_products():
 
 def manage_services():
     print("You selected to manage services.")
+    create_service_from_input()
+
     # Implement service management logic here
 
 def dash():
@@ -32,9 +37,10 @@ def dash():
         elif choice == "3":
             manage_services()
 
+
         elif choice == "4":
-            print("Exiting the dashboard.")
-            break
+            print("Logging out...")
+            return
 
         else:
             print("Invalid choice. Please select a valid option.")
