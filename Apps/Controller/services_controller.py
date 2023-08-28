@@ -74,14 +74,14 @@ def delete_service_by_id(service_id):
 # create_service_from_input()
 
 # Call the function to read and display all services
-read_all_services()
+# read_all_services()
 
 # Call the read_service_by_id() function to read a service by its ID
 # read_service_by_id()
 
 # Call the update_service_from_input() function to update a service
 # service_id_to_update = input("Enter the service ID you want to update: ")
-# update_service_from_input(service_id)
+# update_service_from_input(service_id_to_update)  # Pass the correct variable here
 
 # Prompt the user to enter the ID of the service they want to delete
 # service_id_to_delete = input("Enter the ID of the service you want to delete: ")

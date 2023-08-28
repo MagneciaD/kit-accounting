@@ -7,8 +7,8 @@ def authenticate_user(conn, email, password):
     cursor.execute(query, (email,))
     user = cursor.fetchone()
 
-    if user and user[0] == password:
-        return True, user[0]  # Return user_id along with the authentication result
+    if user and user[2] == password:
+        return True, user[2]  # Return user_id along with the authentication result
     else:
         return False, None
 

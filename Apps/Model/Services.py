@@ -64,10 +64,10 @@ class Service:
 
             query = """
             UPDATE services
-            SET user_id = %s, service_name = %s, description = %s, price = %s
+            SET service_id = %s, service_name = %s, description = %s, price = %s
             WHERE service_id = %s
             """
-            values = (self.user_id, self.service_name, self.description, self.price, self.service_id)
+            values = (self.service_id, self.service_name, self.description, self.price, self.service_id)
 
             cursor.execute(query, values)
             conn.commit()
