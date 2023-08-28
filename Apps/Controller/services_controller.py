@@ -44,7 +44,7 @@ def read_service_by_id():
     service = Service.read(service_id)
 
     if service:
-        print(f"Service ID: {service.id}")
+        print(f"Service ID: {service_id}")
         print(f"Service Name: {service.service_name}")
         print(f"Description: {service.description}")
         print(f"Price: {service.price}")
