@@ -2,9 +2,6 @@ import mysql.connector
 from Apps.Controller.services_controller import *
 from Resources.View.dashboard_view import *
 
-print("Services Page")
-
-
 def add_service(user_id):
     print("You selected to add a new service.")
     create_service_from_input(user_id)

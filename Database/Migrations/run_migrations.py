@@ -12,6 +12,8 @@ from Database.Migrations.Quotation_Table_Migrations import create_quotation_tabl
 from Database.Migrations.Quotation_Table_Migrations import drop_quotation_table
 from Database.Migrations.Services_Table_Migrations import create_services_table
 from Database.Migrations.Services_Table_Migrations import drop_services_table
+from Database.Migrations.Products_Table_Migrations import create_products_table
+from Database.Migrations.Products_Table_Migrations import drop_products_table
 
 MIGRATIONS_RUN_FLAG = False
 
@@ -26,6 +28,7 @@ def run_migrations():
         create_items_table()
         create_quotation_table()
         create_services_table()
+        create_products_table()
         # call other migration functions here
         MIGRATIONS_RUN_FLAG = True
     else:
@@ -37,6 +40,7 @@ def run_migrations():
         drop_items_table()
         drop_quotation_table()
         drop_services_table()
+        drop_products_table()
 
 if __name__ == "__main__":
     run_migrations()

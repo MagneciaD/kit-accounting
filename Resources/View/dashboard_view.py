@@ -9,7 +9,7 @@ def manage_profiles():
     # Implement profile view logic here
 
 
-def manage_products():
+def manage_products(user_id):
     print("You selected to manage products.")
     create_product_from_input(user_id)
     # Implement product management logic here
@@ -40,7 +40,7 @@ def dash(user_id):
         if choice == "1":
             manage_profiles()
         elif choice == "2":
-            manage_products()
+            manage_products(user_id)
         elif choice == "3":
             manage_services(user_id)
         elif choice == "4":

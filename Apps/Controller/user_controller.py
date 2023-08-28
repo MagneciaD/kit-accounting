@@ -1,7 +1,6 @@
 # Import the User class from the correct module
 import random
 import string
-
 from Apps.Controller.organizaion_controller import create_organization_from_input
 from Resources.View.dashboard_view import *
 from Apps.Model.User import User
@@ -13,12 +12,6 @@ def generate_user_id():
     return user_id
 
 # Create user
-
-def generate_user_id():
-    numbers = ''.join(random.choices(string.digits, k=5))
-    letters = ''.join(random.choices(string.ascii_letters, k=2))
-    user_id = 'USER' + numbers
-    return user_id
 
 def create_user_from_input():
     try:

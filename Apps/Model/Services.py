@@ -1,4 +1,3 @@
-import mysql.connector
 from Database.Migrations.connection import create_connection
 import mysql.connector
 from mysql.connector import errorcode
@@ -94,7 +93,7 @@ class Service:
             service_data = cursor.fetchone()
 
             if service_data:
-                service = Service(service_data[0], service_data[1], service_data[2], service_data[3], service_data[4])
+                service = Service(service_data[1], service_data[2], service_data[3], service_data[4], service_data[5])
                 return service
             else:
                 print("Service not found.")
@@ -108,14 +107,13 @@ class Service:
                 cursor.close()
                 conn.close()
 
-
     @staticmethod
     def delete(service_id):
         try:
             conn = create_connection()
             cursor = conn.cursor()
 
-            query = "DELETE FROM services WHERE service_id = %s"  # Correct the column name here
+            query = "DELETE FROM services WHERE service_id = %s"
             values = (service_id,)
 
             cursor.execute(query, values)
