@@ -44,7 +44,7 @@ class Service:
 
             services = []
             for service_data in service_data_list:
-                service = Service(service_data[0], service_data[1], service_data[2], service_data[3], service_data[4])
+                service = Service(service_data[1], service_data[2], service_data[3], service_data[4], service_data[5])
                 services.append(service)
 
             return services
