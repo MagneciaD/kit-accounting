@@ -1,6 +1,5 @@
 import mysql.connector
-from Resources.View.dashboard_view import *
-
+from Resources.View.dashboard_view import dash
 
 def authenticate_user(conn, email, password):
     cursor = conn.cursor()
@@ -13,31 +12,41 @@ def authenticate_user(conn, email, password):
     else:
         return False, None
 
-def fill_in():
-    db_conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="kit-accounting-db"
-    )
+def login():
+    email = input("Enter your email: ")
+    password = input("Enter your password: ")
 
-    print("Login Page")
+    if email and password:
+        db_conn = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="",
+            database="kit-accounting-db"
+        )
 
-    while True:
-        email = input("Enter your email: ")
-        password = input("Enter your password: ")
+        auth_result, user_id = authenticate_user(db_conn, email, password)
+        db_conn.close()
 
-        if authenticate_user(db_conn, email, password):
-            print("Login successful. Welcome, {}!".format(email))
-            auth_result, user_id = authenticate_user(db_conn, email, password)
-            if auth_result:
-                dash(user_id)
-                break
+        if auth_result:
+            print("Login Successful. Welcome, {}!".format(email))
+            return user_id
+
         else:
-            print("Login failed. Invalid email or password.")
+            print("Login Failed. Invalid email or password.")
+            return None
+    else:
+        print("Empty Fields. Please enter both email and password.")
+        return None
 
-    db_conn.close()
+def main():
+    print("User Login")
 
+    user_id = None
+    while user_id is None:
+        user_id = login()
+
+    # Call your dashboard function here using the obtained user_id
+    dash(user_id)
 
 if __name__ == "__main__":
-    fill_in()
+    main()

@@ -1,3 +1,4 @@
+import mysql.connector
 from Database.Migrations.connection import create_connection
 import mysql.connector
 from mysql.connector import errorcode
@@ -107,13 +108,14 @@ class Service:
                 cursor.close()
                 conn.close()
 
+
     @staticmethod
     def delete(service_id):
         try:
             conn = create_connection()
             cursor = conn.cursor()
 
-            query = "DELETE FROM services WHERE s_id = %s"
+            query = "DELETE FROM services WHERE service_id = %s"  # Correct the column name here
             values = (service_id,)
 
             cursor.execute(query, values)

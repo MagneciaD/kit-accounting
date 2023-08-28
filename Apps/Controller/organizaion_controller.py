@@ -1,4 +1,5 @@
 from Apps.Model.Organization import Organization
+# from Resources.View.login import *
 import random
 import string
 
@@ -24,11 +25,12 @@ def create_organization_from_input(user_id):
         organization = Organization(org_id, user_id, company_name, company_address, email_address, company_logo, phone_no, website_link)
         organization.save()
 
+
         print("Organization created and saved successfully!")
 
     except Exception as e:
         print("An error occurred:", e)
-
+    # login()
 
 def read_all_organizations():
     organizations = Organization.read_all()

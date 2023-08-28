@@ -16,6 +16,7 @@ def products_in():
         add_product = input("Enter a Product: ")
         description = input("Enter service Description: ")
         price = input("Enter service Price: ")
+        break
 
 
 if __name__ == "__main__":
