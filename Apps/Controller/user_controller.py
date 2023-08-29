@@ -13,11 +13,8 @@ def generate_user_id():
 
 # Create user
 
-def create_user_from_input():
+def create_user(name, email, password):
     try:
-        name = input("Enter your name: ")
-        email = input("Enter your email: ")
-        password = input("Enter your password: ")
         user_id = generate_user_id()
 
         # Create a User instance
@@ -28,7 +25,10 @@ def create_user_from_input():
 
         create_organization_from_input(user_id)
 
-        print("User created and saved successfully!")
+        return user_id
+
+    except Exception as e:
+        return str(e)
 
         dash()
 

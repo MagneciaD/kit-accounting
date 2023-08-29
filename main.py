@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from Apps.Controller.user_controller import create_user_from_input
 from Resources.View.auth.login_frame import LoginFrame
+from Resources.View.auth import register
 
 class FrontendApp:
     def __init__(self, root):
@@ -36,3 +37,4 @@ def main():
 
 if __name__ == "__main__":
   main()
+
