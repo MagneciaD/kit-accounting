@@ -1,8 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
-from Apps.Controller.user_controller import *
-from Resources.View.auth.login import *
-from Resources.View.admin.dashboard_view import *
+from Apps.Controller.user_controller import create_user_from_input
+from Resources.View.auth.login_frame import LoginFrame
 
 class FrontendApp:
     def __init__(self, root):
@@ -20,11 +19,7 @@ class FrontendApp:
         self.exit_button.pack()
 
     def open_login(self):
-        user_id = login()  # Return the user_id from the login function
-        if user_id:
-            dash(user_id)  # Pass the user_id to the dashboard
-        else:
-            messagebox.showerror("Login Failed", "Invalid username or password.")
+        login_frame = LoginFrame(self.root)
 
     def open_register(self):
         print("User Registration Page.")

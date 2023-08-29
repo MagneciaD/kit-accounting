@@ -1,4 +1,5 @@
 import mysql.connector
+import tkinter as tk
 from Resources.View.admin.dashboard_view import dash
 from Resources.View.profile_view import display_user_info
 
@@ -13,14 +14,7 @@ def authenticate_user(conn, email, password):
     else:
         return False, None
 
-def get_user_input():
-    email = input("Enter your email: ")
-    password = input("Enter your password: ")
-    return email, password
-
-def login():
-    email, password = get_user_input()
-
+def login(email, password):
     if email and password:
         db_conn = mysql.connector.connect(
             host="localhost",
@@ -42,16 +36,6 @@ def login():
         print("Empty Fields. Please enter both email and password.")
         return None
 
-def main():
-    print("User Login")
 
-    user_id = None
-    while user_id is None:
-        user_id = login()
 
-    # Call your dashboard function here using the obtained user_id
-    if user_id is not None:
-        dash(user_id)
 
-if __name__ == "__main__":
-    main()
