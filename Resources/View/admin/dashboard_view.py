@@ -1,15 +1,17 @@
 from Apps.Controller.products_controller import create_product_from_input
 from Resources.View.services import services_dashboard
+from Resources.View.products import products_dashboard
+
 from Resources.View.profile_view import display_user_info
 
 def manage_profiles(user_id):
     print("You selected to manage profiles.")
-    display_user_info(user_id)
+    products_dashboard(user_id)
     # Implement profile management logic here
 
 def manage_products(user_id):
     print("You selected to manage products.")
-    create_product_from_input(user_id)
+    products_dashboard(user_id)
     # Implement product management logic here
 
 def manage_services(user_id):

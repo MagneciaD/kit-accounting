@@ -3,7 +3,7 @@ import mysql.connector
 from mysql.connector import errorcode
 
 class Product:
-    def _init_(self, product_id, user_id, product_name, description, price):
+    def __init__(self, product_id, user_id, product_name, description, price):
         self.product_id = product_id
         self.user_id = user_id
         self.product_name = product_name
@@ -44,7 +44,7 @@ class Product:
 
             products = []
             for product_data in product_data_list:
-                product = Product(product_data[0], product_data[1], product_data[2], product_data[3], product_data[4])
+                product = Product(product_data[1], product_data[2], product_data[3], product_data[4], product_data[5])
                 products.append(product)
 
             return products
@@ -64,10 +64,10 @@ class Product:
 
             query = """
             UPDATE products
-            SET user_id = %s, product_name = %s, description = %s, price = %s
+            SET product_id = %s, product_name = %s, description = %s, price = %s
             WHERE product_id = %s
             """
-            values = (self.user_id, self.product_name, self.description, self.price, self.product_id)
+            values = (self.product_id, self.product_name, self.description, self.price, self.product_id)
 
             cursor.execute(query, values)
             conn.commit()
@@ -86,7 +86,7 @@ class Product:
             conn = create_connection()
             cursor = conn.cursor()
 
-            query = "SELECT * FROM services WHERE product_id = %s"
+            query = "SELECT * FROM products WHERE product_id = %s"  # Update the table name to 'products'
             values = (product_id,)
 
             cursor.execute(query, values)
@@ -96,7 +96,7 @@ class Product:
                 product = Product(product_data[0], product_data[1], product_data[2], product_data[3], product_data[4])
                 return product
             else:
-                print("product not found.")
+                print("Product not found.")  # Update the print message
                 return None
 
         except mysql.connector.Error as err:
@@ -113,12 +113,12 @@ class Product:
             conn = create_connection()
             cursor = conn.cursor()
 
-            query = "DELETE FROM products WHERE s_id = %s"
+            query = "DELETE FROM products WHERE product_id = %s"  # Correct the column name
             values = (product_id,)
 
             cursor.execute(query, values)
             conn.commit()
-            print("product deleted successfully.")
+            print("Product deleted successfully.")
 
         except mysql.connector.Error as err:
             print("Error deleting product: {}".format(err))

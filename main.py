@@ -40,5 +40,4 @@ def main():
     root.mainloop()
 
 if __name__ == "__main__":
-    app_menu = AppMenu()
-    app_menu.run()
+  main()
