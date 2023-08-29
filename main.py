@@ -3,6 +3,10 @@ from Apps.Controller.user_controller import *
 from Resources.View.login import *
 from Resources.View.dashboard_view import *
 
+class FrontendApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Application Menu")
 
 def display_menu():
     print("Menu:")

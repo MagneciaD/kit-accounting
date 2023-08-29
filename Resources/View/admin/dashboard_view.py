@@ -30,6 +30,22 @@ def display_dash():
     print("3. Manage Services")
     print("4. Exit")
 
+def manage_profiles():
+    print("You selected to manage profiles.")
+    # Implement profile management logic here
+
+
+def manage_products():
+    print("You selected to manage products.")
+    # Implement product management logic here
+
+def manage_services():
+    print("You selected to manage services.")
+    # Implement service management logic here
+
+def dash():
+    logged_in_user_id = int(input("Enter your user ID: "))
+
 
 def dash(user_id):
     print("Welcome to Dashboard")
