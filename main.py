@@ -1,56 +1,62 @@
 import mysql.connector
-from Apps.Controller.user_controller import *
-from Resources.View.auth.login import *
-from Resources.View.admin.dashboard_view import *
+from Apps.Controller.user_controller import create_user_from_input
+from Resources.View.auth.login import login
+from Resources.View.admin.dashboard_view import dash
 
 class FrontendApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Application Menu")
 
-def display_menu():
-    print("Menu:")
-    print("1. Open Login")
-    print("2. Open Register")
-    print("3. Exit")
+class AppMenu:
+    def __init__(self):
+        self.options = {
+            "1": self.open_login,
+            "2": self.open_register,
+            "3": self.exit_program
+        }
 
-def open_login():
-    return login()  # Return the user_id from the login function
+    @staticmethod
+    def display_menu():
+        print("Menu:")
+        print("1. Open Login")
+        print("2. Open Register")
+        print("3. Exit")
 
-def open_register():
-    print("User Registration Page.")
-    # Perform actions for Option 2
-    create_user_from_input()
+    @staticmethod
+    def open_login():
+        return login()  # Return the user_id from the login function
 
-def exit_program():
-    print("Exiting the program.")
-    return True
+    @staticmethod
+    def open_register():
+        print("User Registration Page.")
+        create_user_from_input()
 
-def main():
-    options = {
-        "1": open_login,
-        "2": open_register,
-        "3": exit_program
-    }
+    @staticmethod
+    def exit_program():
+        print("Exiting the program.")
+        return True
 
-    while True:
-        display_menu()
-        choice = input("Enter your choice: ")
+    def run(self):
+        while True:
+            self.display_menu()
+            choice = input("Enter your choice: ")
 
-        if choice in options:
-            if choice == "1":
-                user_id = options[choice]()  # Get the user_id from the login function
-                if user_id:
-                    dash(user_id)  # Pass the user_id to the dashboard
+            if choice in self.options:
+                if choice == "1":
+                    user_id = self.options[choice]()  # Get the user_id from the login function
+                    if user_id:
+                        dash(user_id)  # Pass the user_id to the dashboard
+                    else:
+                        print("Login failed.")
+                elif choice == "3":
+                    if self.options[choice]():
+                        break
                 else:
-                    print("Login failed.")
-            elif choice == "3":
-                if options[choice]():
-                    break
+                    self.options[choice]()
             else:
-                options[choice]()
-        else:
-            print("Invalid choice. Please select a valid option.")
+                print("Invalid choice. Please select a valid option.")
 
 if __name__ == "__main__":
-    main()
+    app_menu = AppMenu()
+    app_menu.run()

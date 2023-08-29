@@ -1,51 +1,28 @@
-import mysql.connector
-from Resources.View.services import *
-from Apps.Controller.products_controller import *
-from Apps.Controller.user_controller import *
+from Apps.Controller.products_controller import create_product_from_input
+from Resources.View.services import services_dashboard
+from Resources.View.profile_view import display_user_info
 
-
-def manage_profiles():
-    print("You selected to view profile.")
-    # Implement profile view logic here
-
+def manage_profiles(user_id):
+    print("You selected to manage profiles.")
+    display_user_info(user_id)
+    # Implement profile management logic here
 
 def manage_products(user_id):
     print("You selected to manage products.")
     create_product_from_input(user_id)
     # Implement product management logic here
 
-
 def manage_services(user_id):
     print("You selected to manage services.")
     services_dashboard(user_id)
-    # create_service_from_input(user_id)
-    # read_service_by_id()
     # Implement service management logic here
-
 
 def display_dash():
     print("Dashboard Menu:")
-    print("1. View Profiles")
+    print("1. Manage Profiles")
     print("2. Manage Products")
     print("3. Manage Services")
     print("4. Exit")
-
-def manage_profiles():
-    print("You selected to manage profiles.")
-    # Implement profile management logic here
-
-
-def manage_products():
-    print("You selected to manage products.")
-    # Implement product management logic here
-
-def manage_services():
-    print("You selected to manage services.")
-    # Implement service management logic here
-
-def dash():
-    logged_in_user_id = int(input("Enter your user ID: "))
-
 
 def dash(user_id):
     print("Welcome to Dashboard")
@@ -54,7 +31,7 @@ def dash(user_id):
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            manage_profiles()
+            manage_profiles(user_id)
         elif choice == "2":
             manage_products(user_id)
         elif choice == "3":
@@ -64,7 +41,6 @@ def dash(user_id):
             break
         else:
             print("Invalid choice. Please select a valid option.")
-
 
 if __name__ == "__main__":
     user_id = 123  # Replace with the actual user ID

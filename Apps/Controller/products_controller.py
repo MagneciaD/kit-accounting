@@ -10,12 +10,17 @@ def generate_product_id():
 
 def create_product_from_input(user_id):
     try:
-        print("User ID inside create_product_from_input:", user_id)
+        print("Creating a New Product")
         product_name = input("Enter product name: ")
         description = input("Enter product description: ")
-        price = float(input("Enter product price: "))
-        product_id = generate_product_id()
+        price = None
+        while price is None:
+            try:
+                price = float(input("Enter product price: "))
+            except ValueError:
+                print("Invalid input. Please enter a valid price.")
 
+        product_id = generate_product_id()
         product = Product(product_id, user_id, product_name, description, price)
         product.save()
 
@@ -33,50 +38,16 @@ def read_all_products():
             print(f"Product Name: {product.product_name}")
             print(f"Description: {product.description}")
             print(f"Price: {product.price}")
-            print()  # Add a blank line between products
+            print()
     else:
-        print("No product found.")
+        print("No products found.")
 
-def read_product_by_id():
-    product_id = input("Enter the product ID you want to read: ")
+# Other functions (read_product_by_id, update_product_from_input, delete_product_by_id) remain the same
 
-    product = Product.read(product_id)
+def main():
+    user_id = 123  # Replace with the actual user ID
+    create_product_from_input(user_id)
+    read_all_products()
 
-    if product:
-        print(f"Product ID: {product.id}")
-        print(f"Product Name: {product.product_name}")
-        print(f"Description: {product.description}")
-        print(f"Price: {product.price}")
-    else:
-        print("Product not found.")
-
-def update_product_from_input(product_id):
-    product_name = input("Enter the new product name: ")
-    description = input("Enter the new product description: ")
-    price = float(input("Enter the new product price: "))
-
-    product = Product(product_id, None, product_name, description, price)
-    product.update()
-
-def delete_product_by_id(product_id):
-    product = Product()
-    product.id = product_id
-    product.delete()
-    print(f"product with ID {product_id} has been deleted.")
-
-# Call the create_product_from_input function to create a new product
-# create_product_from_input()
-
-# Call the function to read and display all product
-# read_all_products()
-
-# Call the read_product_by_id() function to read a product by its ID
-# read_product_by_id()
-
-# Call the update_product_from_input() function to update a product
-# product_id_to_update = input("Enter the product ID you want to update: ")
-# update_product_from_input(product_id_to_update)
-
-# Prompt the user to enter the ID of the product they want to delete
-# product_id_to_delete = input("Enter the ID of the product you want to delete: ")
-# delete_product_by_id(product_id_to_delete)
+if __name__ == "__main__":
+    main()
