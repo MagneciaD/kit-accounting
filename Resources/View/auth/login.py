@@ -29,9 +29,9 @@ def login():
         auth_result, user_id = authenticate_user(db_conn, email, password)
         db_conn.close()
 
-    if user:
-        email = 3 # index 3 corresponds to the "username" (email) column
-        print(f"Hello, {user[email]}!")
+    if auth_result:
+        print("Login Successful. Welcome, {}!".format(email))
+        return user_id
 
         # Retrieve and display user profile information
         display_user_info(user_id)
@@ -71,7 +71,7 @@ def main():
     dash(user_id)
 
 if __name__ == "__main__":
-    fill_in()
+    login()
 
     # Close the database connection when done
     db.close()

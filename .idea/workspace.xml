@@ -12,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
 >>>>>>> 6f1f6fb6f85fbd164632c21a83b25727c635bf21
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Apps/Controller/clients_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Controller/clients_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/Controller/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Controller/user_controller.py" afterDir="false" />
 <<<<<<< HEAD
@@ -20,6 +21,12 @@
       <change beforePath="$PROJECT_DIR$/Database/Migrations/run_migrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Migrations/run_migrations.py" afterDir="false" />
 =======
 >>>>>>> 6f1f6fb6f85fbd164632c21a83b25727c635bf21
+=======
+      <change beforePath="$PROJECT_DIR$/Apps/Controller/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Controller/user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/View/dashboard_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/View/admin/dashboard_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/View/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/View/auth/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/View/profile_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/View/profile_view.py" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +88,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Pycharm\kit-accounting\Resources\View\admin" />
+      <recent name="D:\Pycharm\kit-accounting\Resources\View\auth" />
       <recent name="D:\Pycharm\kit-accounting\Resources" />
     </key>
   </component>

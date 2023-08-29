@@ -1,7 +1,7 @@
 import mysql.connector
 from Apps.Controller.user_controller import *
-from Resources.View.login import *
-from Resources.View.dashboard_view import *
+from Resources.View.auth.login import *
+from Resources.View.admin.dashboard_view import *
 
 class FrontendApp:
     def __init__(self, root):
