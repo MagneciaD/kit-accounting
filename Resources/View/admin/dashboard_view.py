@@ -6,7 +6,7 @@ from Resources.View.profile_view import display_user_info
 
 def manage_profiles(user_id):
     print("You selected to manage profiles.")
-    products_dashboard(user_id)
+    display_user_info(user_id)
     # Implement profile management logic here
 
 def manage_products(user_id):
