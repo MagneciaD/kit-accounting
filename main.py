@@ -1,4 +1,5 @@
-import mysql.connector
+import tkinter as tk
+from tkinter import messagebox
 from Apps.Controller.user_controller import *
 from Resources.View.auth.login import *
 from Resources.View.admin.dashboard_view import *
@@ -8,49 +9,35 @@ class FrontendApp:
         self.root = root
         self.root.title("Application Menu")
 
-def display_menu():
-    print("Menu:")
-    print("1. Open Login")
-    print("2. Open Register")
-    print("3. Exit")
+        # Create buttons for each option
+        self.login_button = tk.Button(self.root, text="Open Login", command=self.open_login)
+        self.register_button = tk.Button(self.root, text="Open Register", command=self.open_register)
+        self.exit_button = tk.Button(self.root, text="Exit", command=self.exit_program)
 
-def open_login():
-    return login()  # Return the user_id from the login function
+        # Pack buttons
+        self.login_button.pack()
+        self.register_button.pack()
+        self.exit_button.pack()
 
-def open_register():
-    print("User Registration Page.")
-    # Perform actions for Option 2
-    create_user_from_input()
+    def open_login(self):
+        user_id = login()  # Return the user_id from the login function
+        if user_id:
+            dash(user_id)  # Pass the user_id to the dashboard
+        else:
+            messagebox.showerror("Login Failed", "Invalid username or password.")
 
-def exit_program():
-    print("Exiting the program.")
-    return True
+    def open_register(self):
+        print("User Registration Page.")
+        create_user_from_input()
+
+    def exit_program(self):
+        if messagebox.askyesno("Exit Program", "Are you sure you want to exit?"):
+            self.root.quit()
 
 def main():
-    options = {
-        "1": open_login,
-        "2": open_register,
-        "3": exit_program
-    }
-
-    while True:
-        display_menu()
-        choice = input("Enter your choice: ")
-
-        if choice in options:
-            if choice == "1":
-                user_id = options[choice]()  # Get the user_id from the login function
-                if user_id:
-                    dash(user_id)  # Pass the user_id to the dashboard
-                else:
-                    print("Login failed.")
-            elif choice == "3":
-                if options[choice]():
-                    break
-            else:
-                options[choice]()
-        else:
-            print("Invalid choice. Please select a valid option.")
+    root = tk.Tk()
+    app = FrontendApp(root)
+    root.mainloop()
 
 if __name__ == "__main__":
     main()
