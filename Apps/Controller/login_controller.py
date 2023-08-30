@@ -1,7 +1,5 @@
 import mysql.connector
-import tkinter as tk
-from Resources.View.admin.dashboard_view import dash
-from Resources.View.profile_view import *
+from Resources.View.admin.profile_view import *
 
 def authenticate_user(conn, email, password):
     cursor = conn.cursor()
