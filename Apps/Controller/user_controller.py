@@ -61,13 +61,13 @@ def read_user_by_id():
     else:
         print("User not found.")
 
-def update_user_from_input(user_id):
-    name = input("Enter the new name: ")
-    email = input("Enter the new email: ")
-    password = input("Enter the new password: ")
-
-    user = User(user_id, name, email, password)  # Pass all required arguments
-    user.update()
+# def update_user_from_input(user_id):
+#     name = input("Enter the new name: ")
+#     email = input("Enter the new email: ")
+#     password = input("Enter the new password: ")
+#
+#     user = User(user_id, name, email, password)  # Pass all required arguments
+#     user.update()
 
 # Controller
 def delete_user_by_id(user_id):

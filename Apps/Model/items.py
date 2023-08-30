@@ -6,7 +6,7 @@ class Item:
         self.qi_id = qi_id
         self.user_id = user_id
         self.name = name
-        self.item_quality = item_quality
+        self.item_quantity = item_quality
         self.price = price
         self.sub_total = sub_total
 

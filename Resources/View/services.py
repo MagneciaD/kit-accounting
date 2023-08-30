@@ -41,7 +41,7 @@ def services_dashboard(user_id):
         if choice == "1":
             add_service(user_id)
         elif choice == "2":
-            read_all_services()
+            display_all_services()
         elif choice == "3":
             read_service()
         elif choice == "4":

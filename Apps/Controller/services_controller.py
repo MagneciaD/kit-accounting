@@ -14,7 +14,6 @@ def create_service_from_input(user_id):
         description = input("Enter service description: ")
         price = input("Enter service price: ")  # Prompt the user for the price
         service_id = generate_service_id()
-
         service = Service(service_name, description, price, service_id)
         service.save()
 

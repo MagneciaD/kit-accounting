@@ -13,7 +13,7 @@ def create_item_from_input():
     try:
         user_id = input("Enter user ID: ")
         name = input("Enter item name: ")
-        item_quality = input("Enter item quality: ")
+        item_quantity = input("Enter item quality: ")
         price = float(input("Enter item price: "))
         sub_total = float(input("Enter sub total: "))
         qi_id = generate_qi_id()
@@ -86,8 +86,8 @@ read_item_by_qi_id()
 item_qi_id_to_update = input("Enter the item ID you want to update: ")
 
 # Prompt the user to enter the new user ID
-new_user_id = input("Enter new user ID: ")
-update_item_from_input(item_qi_id_to_update, new_user_id)
+# new_user_id = input("Enter new user ID: ")
+# update_item_from_input(item_qi_id_to_update, new_user_id)
 
 
 # Prompt the user to enter the ID of the item they want to delete

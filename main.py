@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from Apps.Controller.user_controller import create_user_from_input
+from Apps.Controller.user_controller import create_user
 from Resources.View.auth.login_frame import LoginFrame
 from Resources.View.auth import register
 
@@ -24,7 +24,7 @@ class FrontendApp:
 
     def open_register(self):
         print("User Registration Page.")
-        create_user_from_input()
+        create_user()
 
     def exit_program(self):
         if messagebox.askyesno("Exit Program", "Are you sure you want to exit?"):
