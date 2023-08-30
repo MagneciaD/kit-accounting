@@ -2,7 +2,9 @@ import tkinter as tk
 from tkinter import messagebox
 from Apps.Controller.user_controller import create_user
 from Resources.View.auth.login_frame import LoginFrame
-from Resources.View.auth import register
+from Resources.View.auth import register_frame
+from Resources.View.auth.register_frame import RegistrationApp
+
 
 class FrontendApp:
     def __init__(self, root):
@@ -23,8 +25,16 @@ class FrontendApp:
         login_frame = LoginFrame(self.root)
 
     def open_register(self):
-        print("User Registration Page.")
-        create_user()
+        registration_frame = RegistrationApp(self.root)
+        self.root.wait_window(registration_frame.root)  # Wait for the registration window to close
+
+        if registration_frame.result:  # Assuming RegistrationApp sets a result attribute
+            name, email, password = registration_frame.result
+            result = create_user(name, email, password)
+            if result.isdigit():
+                messagebox.showinfo("Registration Successful", f"User registered successfully! User ID: {result}")
+            else:
+                messagebox.showerror("Error", f"An error occurred: {result}")
 
     def exit_program(self):
         if messagebox.askyesno("Exit Program", "Are you sure you want to exit?"):
