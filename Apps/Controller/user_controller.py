@@ -2,6 +2,7 @@
 import random
 import string
 from Apps.Controller.organizaion_controller import create_organization_from_input
+from Apps.Controller.clients_controller import create_client_from_input
 from Apps.Controller.login_controller import *
 from Apps.Model.User import User
 

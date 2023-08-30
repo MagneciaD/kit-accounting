@@ -2,9 +2,8 @@ import mysql.connector
 from Apps.Controller.clients_controller import *
 from Resources.View.admin.dashboard_view import *
 
-def add_client(user_id, org_id):
-    print("You selected to add a new client.")
-    create_client_from_input(user_id, org_id)
+def add_client(user_id):
+    create_client_from_input(user_id)
 
 def display_all_clients():
     print("You selected to read all clients.")
@@ -34,13 +33,13 @@ def display_clients_menu():
     print("5. Delete Client")
     print("6. Go back to main menu")
 
-def clients_dashboard(user_id, org_id):
+def clients_dashboard(user_id):
     while True:
         display_clients_menu()
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            add_client(user_id, org_id)
+            add_client(user_id)
         elif choice == "2":
             display_all_clients()
         elif choice == "3":
@@ -57,5 +56,4 @@ def clients_dashboard(user_id, org_id):
 
 if __name__ == "__main__":
     user_id = 123  # Replace with the actual user ID
-    org_id = 456
-    clients_dashboard(user_id, org_id)
+    clients_dashboard(user_id)

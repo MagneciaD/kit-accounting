@@ -19,9 +19,10 @@ def manage_services(user_id):
     services_dashboard(user_id)
     # Implement service management logic here
 
-def manage_clients(user_id, org_id):
+def manage_clients(user_id):
     print("You selected to manage clients.")
-    clients_dashboard(user_id, org_id)
+    clients_dashboard(user_id)
+
 
 def display_dash():
     print("Dashboard Menu:")
@@ -44,7 +45,7 @@ def dash(user_id):
         elif choice == "3":
             manage_services(user_id)
         elif choice == "4":
-            manage_clients(user_id, org_id)
+            manage_clients(user_id)
         elif choice == "5":
             print("Exiting the dashboard.")
             break
@@ -53,5 +54,4 @@ def dash(user_id):
 
 if __name__ == "__main__":
     user_id = 123  # Replace with the actual user ID
-    org_id = 456
     dash(user_id)

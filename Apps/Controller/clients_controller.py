@@ -2,8 +2,7 @@ import random
 import string
 from Database.Migrations.connection import create_connection
 from Apps.Model.Clients import Client
-from Apps.Model.User import User
-from Apps.Model.Organization import Organization
+from Apps.Model.User import *
 
 def generate_client_id():
     numbers = ''.join(random.choices(string.digits, k=5))
@@ -11,7 +10,7 @@ def generate_client_id():
     client_id = 'CLT' + numbers
     return client_id
 
-def create_client_from_input(user_id, org_id):
+def create_client_from_input(user_id):
     try:
         first_name = input("Enter first name: ")
         last_name = input("Enter last name: ")
@@ -21,7 +20,7 @@ def create_client_from_input(user_id, org_id):
         timestamp = input("Enter timestamp: ")
         client_id = generate_client_id()
 
-        client = Client(client_id, first_name, last_name, email, client_address, phone_no, timestamp)
+        client = Client(client_id, user_id, first_name, last_name, email, client_address, phone_no, timestamp)
         client.save()
 
         print("Client created and saved successfully!")
@@ -36,7 +35,6 @@ def read_all_clients():
         for client in clients:
             print(f"Client ID: {client.client_id}")
             print(f"User ID: {client.user_id}")
-            print(f"Organization ID: {client.org_id}")
             print(f"First Name: {client.first_name}")
             print(f"Last Name: {client.last_name}")
             print(f"Email: {client.email}")
@@ -55,7 +53,6 @@ def read_client():
     if client:
         print(f"Client ID: {client.client_id}")
         print(f"User ID: {client.user_id}")
-        print(f"Organization ID: {client.org_id}")
         print(f"First Name: {client.first_name}")
         print(f"Last Name: {client.last_name}")
         print(f"Email: {client.email}")
@@ -88,7 +85,6 @@ def delete_client(client_id):
 def print_client_details(client):
     print(f"Client ID: {client.client_id}")
     print(f"User ID: {client.user_id}")
-    print(f"Organization ID: {client.org_id}")
     print(f"First Name: {client.first_name}")
     print(f"Last Name: {client.last_name}")
     print(f"Email: {client.email}")
@@ -101,7 +97,7 @@ def print_client_details(client):
 
 # Call the create_client_from_input() function to create a new client
 # user_id = input("Enter user ID: ")
-# create_client_from_input()
+# create_client_from_input(user_id)
 
 # Call the function to read and display all clients
 # read_all_clients()

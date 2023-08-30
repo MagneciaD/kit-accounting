@@ -26,8 +26,8 @@ class LoginFrame(tk.Toplevel):
         email = self.email_entry.get()
         password = self.password_entry.get()
 
-        user_id = login(email, password)
+        user_id = login(email, password)  # Assuming login() returns user_id
 
         if user_id is not None:
             self.destroy()  # Close the login window
-            dash(user_id)
+            dash(user_id)  # Pass user_id to the dash function
